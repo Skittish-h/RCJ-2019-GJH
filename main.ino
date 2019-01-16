@@ -23,15 +23,25 @@ mot 3      front
 #include "includes/sensors.h"
 #include "includes/gyro.h"
 #include "includes/improc.h"
+//#include <stdlib.h>
 
-//our motors
-Motor motors[3];
+
+
 
 void setup()
 {
-
+  Serial.begin(9600);
+  Serial.println("yo");
+  setupMotors();
+  
+  for (int i = 0; i < 180; i++) {
+    Serial.print(i*2);
+    Serial.print(" : ");
+    Serial.println(calcs[1][i]);
+  }
 }
 void loop()
 {
-
+  setSpeedFromVector(0 ,100);
+    setAllSpeed();
 }
