@@ -5,6 +5,38 @@
     -Bottom IR sensors (LED & PhotoTransostor pairs)
     -Gyroscope (IMU included) & Magnetic compass
     -Motor Control
+    
+
+
+void setup() {
+  // put your setup code here, to run once:
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  //Get all vals
+  getVals();
+  int ballPos = ...;
+  //isLine? -> move  away
+  int lineDegs = getDegree();
+  if(lineDegs != -1)
+  {
+    setSpeedFromVector(lineDegs - 180 , 100);
+  }
+  //Find ball
+  //isBall? -> remember val -> move after ball
+  //See ball? -> move to ball
+  //don't see ball? -> move backwards
+  if(ballPos == -1)
+  {
+    setSpeedFromVector(180, 100);
+  }
+  //Compare gyro and goal;
+  //Somehow figure out rotation
+  //Apply to motors
+
+}
 */
 /*  Motors are aranged in the following way:
           _________ Mot 2
